@@ -17,11 +17,11 @@ app.get('/', function (req, res) {
   res.send('Hello World');
 });
 
-app.get('api/todo', () => {
+app.get('/api/todo', (req, res) => {
   res.json(todoList);
 });
 
-app.post('api/todo', (req, res) => {
+app.post('/api/todo', (req, res) => {
   const { text, done } = req.body;
   todoList.push({
     id: id++,
